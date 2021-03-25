@@ -14,13 +14,15 @@ function App() {
     //must use callback to use async function in useEffect //
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(res.data);
+      const res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+      console.log(res.data.results[0].name);
+
+      setPosts(res.data.results);
       setLoading(false);
     };
     fetchPosts();
   }, []);
-
+  //console.log(https://jsonplaceholder.typicode.com/posts/
   //Get current posts //
   const indexOfLastPost = currentPage * postsPerPage;
   const indexofFirstPost = indexOfLastPost - postsPerPage;
