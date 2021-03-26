@@ -7,9 +7,10 @@ const Posts = ({ posts, loading }) => {
   return (
     <ul className="list-group mb-4">
       {posts.map((post) => (
-        <li key={post.id} className="list-group-item">
-          {post.name}
-        </li>
+        <button key={post.name} className="list-group-item">
+          {/* capitalizing the first character  */}
+          {post.name.charAt(0).toUpperCase() + post.name.slice(1)}
+        </button>
       ))}
     </ul>
   );
