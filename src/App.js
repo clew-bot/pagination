@@ -8,7 +8,8 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
+  const [postsPerPage] = useState(10);
+  console.log("hello");
 
   useEffect(() => {
     //must use callback to use async function in useEffect //
@@ -32,7 +33,9 @@ function App() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div className="container mt-5">
-      <h3 className="text-primary mb-3">Pagination On Wheels</h3>
+      <h3 className="text-primary mb-3 text-center">
+        Pokemon Pokedex Pagination
+      </h3>
       <Posts posts={currentPosts} loading={loading} />
       <Pagination
         postsPerPage={postsPerPage}
