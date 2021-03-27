@@ -16,6 +16,7 @@ const Posts = ({ posts, loading }) => {
   return (
     <ul className="list-group mb-4 text-center">
       {posts.map((post) => (
+
         <p
           onClick={() => {
             setPokemon(post.name);
@@ -26,6 +27,12 @@ const Posts = ({ posts, loading }) => {
         >
           {post.name.charAt(0).toUpperCase() + post.name.slice(1)}
         </p>
+
+        <button key={post.name} className="list-group-item">
+          {/* capitalizing the first character  */}
+          {post.name.charAt(0).toUpperCase() + post.name.slice(1)}
+        </button>
+
       ))}
     </ul>
   );
